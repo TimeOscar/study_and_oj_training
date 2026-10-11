@@ -1,13 +1,22 @@
-#include<iostream>
-#include<cstdio>
+#include <bits/stdc++.h>
 using namespace std;
-int main (){
-    int k ,i;
-    double s = 0 ;  
-    cin >> k  ;
-    for( i=1;s>=k;i++){
-    s = s + 1.0/i ;
+int main()
+{
+    int n, x, a ;
+    int sum = 0;
+    cin >> n >> x;
+    for (int i = 0; i < n; i++)
+    {   int temp = i ;
+        while (temp != 0)
+        {
+            a = temp % 10 ;
+            if (x ==  a)
+            {
+                sum++;
+            }
+            temp / 10 ;
+        }
     }
-    cout << i ;
-    return 0 ; 
+    cout << sum;//输出
+    return 0;
 }
