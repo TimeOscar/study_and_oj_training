@@ -2,10 +2,10 @@
 #include <math.h>
 int main()
 {
-	int a, b, c;
+	int a, b, c ;
 	while (scanf("%d,%d,%d", &a, &b, &c) == 3)
 	{
-		double delta = 0 , a1, a2, a3;
+		double  a1, a2, a3;
 		// 计算
 		if (a == 0)
 		{
@@ -22,7 +22,7 @@ int main()
 			}
 			continue;
 		}
-		delta = b * b - 4.0 * (a * c);
+		int delta = b * b - 4.0 * (a * c);
 		if (delta < 0)
 		{
 			printf("x\n");
@@ -46,5 +46,6 @@ int main()
 	}
 	return 0;
 }
-const double eps = 1e -8
+
 fabs(delta)<eps 
+const double eps = e -8;
