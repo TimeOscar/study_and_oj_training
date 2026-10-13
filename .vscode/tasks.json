@@ -1,9 +1,64 @@
 {
+    "version": "2.0.0",
     "tasks": [
+        {
+            "label": "C++ Compile",
+            "type": "process",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "-fexec-charset=GBK"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "用 C:/mingw64 的 g++ 编译当前打开的 .cpp，在同一个文件夹生成同名 .exe（Ctrl+Shift+B）"
+        },
+        {
+            "label": "C++ Compile (C++17)",
+            "type": "process",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "-std=c++17",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "-fexec-charset=GBK"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "需要 C++17 语法（如 <bits/stdc++.h>、auto、结构体排序）时用这个"
+        },
+        {
+            "label": "C++ Run exe (no debug)",
+            "type": "process",
+            "command": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [],
+            "detail": "只运行已经编译好的 exe，不进入调试"
+        },
         {
             "type": "cppbuild",
             "label": "C/C++: g++.exe 生成活动文件",
-            "command": "C:\\mingw64\\bin\\g++.exe",
+            "command": "C:/mingw64/bin/g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -12,7 +67,7 @@
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "C:/mingw64/bin"
             },
             "problemMatcher": [
                 "$gcc"
@@ -23,6 +78,5 @@
             },
             "detail": "调试器生成的任务。"
         }
-    ],
-    "version": "2.0.0"
+    ]
 }

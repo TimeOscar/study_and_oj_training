@@ -1,0 +1,37 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "C++ 调试 (MinGW gdb)",
+			"type": "cppdbg",
+			"request": "launch",
+			// 调试对象：当前打开的 .cpp 对应的 exe
+			// 重要：MinGW 的 gdb 不支持中文文件名，排序begin.cpp 会报 No such file or directory
+			// 想调试就用英文名文件，例如 sort_begin.cpp
+			"program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			// true：单独弹出一个黑色控制台窗口，scanf 的输入在这里敲
+			// 想用 VS Code 内置终端就改成 false
+			"externalConsole": true,
+			"MIMode": "gdb",
+			"miDebuggerPath": "C:/mingw64/bin/gdb.exe",
+			"setupCommands": [
+				{
+					"description": "为 gdb 启用整齐打印",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "反汇编使用 Intel 风格",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			],
+			// 按 F5 前先跑 tasks.json 里的 "C++ Compile"，保证 exe 是最新且存在的
+			"preLaunchTask": "C++ Compile"
+		}
+	]
+}
