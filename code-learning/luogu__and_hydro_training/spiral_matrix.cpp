@@ -8,7 +8,7 @@ int main() {
 
   while (up <= down && left <= right) {
 
-    for (int j = left; j <= right - left; j++) {
+    for (int j = left; j <= right; j++) {
       a[up][j] = num++;
     }
     up++; // 上边界收缩
