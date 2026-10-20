@@ -1,20 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int a[25],b[25], n , j ;
-    a[1] = 0 ;
+    int a[25], n , j ;
+    memset(a, 0, sizeof(a));
     cin>> n ;
-    for (int i=2; i<=n-2; i++) {
-    b[1]=1;
-    b[0]=1;
-    b[i]= b[i-1]+ b[i-2];
-    a[i]++;
-    a[i-1]++;
-    a[i-2]++;
+    if(n == 1){cout<<0<<" "<<1;return 0 ;}
+    if(n == 2){cout<<1<<" "<<1<<" "<< 1;
+        return 0; }
+    a[n]=1;
+    for (int i=n; i-2>=0; i--) {
+    a[i-1]+=a[i];
+    a[i-2]+=a[i];;
     }
     for (j=0; j<=n; j++) {
-    cout<<a[j];
+    cout<<a[j]<< " ";
     } 
 
     return 0 ;
-}
+}//缺点，使用次数多，慢
+//使用*=会更快
