@@ -4,3 +4,4 @@
 # 忽略编译过程中的目标文件
 *.o
 *.obj
+tempdebug.cpp

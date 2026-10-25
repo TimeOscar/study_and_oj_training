@@ -1,20 +1,32 @@
 #include<bits/stdc++.h>
-using namespace std;
 int main(){
-    int a[25], n , j ;
-    memset(a, 0, sizeof(a));
-    cin>> n ;
-    if(n == 1){cout<<0<<" "<<1;return 0 ;}
-    if(n == 2){cout<<1<<" "<<1<<" "<< 1;
-        return 0; }
-    a[n]=1;
-    for (int i=n; i-2>=0; i--) {
-    a[i-1]+=a[i];
-    a[i-2]+=a[i];;
-    }
-    for (j=0; j<=n; j++) {
-    cout<<a[j]<< " ";
-    } 
+    int a, b, c, n ;
+    scanf("%d",&n  );
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d%d%d", &a,&b,&c);
+        int integ;
+        integ =  a/b;
+        int temp = a % b;
+        int result= 0 ;
+        printf("%d.",integ);
+        for (int j = c ; j >1; j--)
+        { 
+           
+            temp= temp*10;
+             result = temp /b ;
+            temp = temp %b ;
+            printf("%d",result);
+        }//小数部分（去掉最后一位）
+        if (result>=5)
+        {
+            printf("%d",result + 1);
+        }else{
+            printf("%d",result);
+        }
+        
 
-    return 0 ;
+    }
+    
+    return 0;
 }
