@@ -69,7 +69,7 @@ freopen("out.txt","w",stdout)
 
 # 第三次课
 ## 作业评讲
-bool标志元素的使用
+# bool标志元素的使用
  
 ## 数组补充
 1. 字符数组

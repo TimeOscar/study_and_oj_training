@@ -1,34 +1,33 @@
 #include <stdio.h>
-int main()
-{int
-a[1000]={ 0};
-int n=0;
-scanf("%d",&n);
-for (int i = 0; i < n; i++)
-{
-    scanf("%d",&a[i]);
-}
-
-for (int i = 0; i < n; i++)
-{
-    for (int j = 0; j < n-i-1; j++)
+int main() {
+    int max ; 
+    scanf("%d",&max);
+    int a[10000005] ;
+    for (int i = 0; i <10000005; i++)
     {
-        if (a[j]>a[j+1])
+        a[i] = 1;
+    }
+    
+    for (int i = 2; i*i <= max; i++)
+    {
+        for ( int j = 2*i; j <= max; j =j+i )//这里调试了2次改debug之后才搞好了
         {
-            int temp = a[j];
-            a[j]= a[j+1];
-            a[j+1]=temp;
+            a[j] = 0;
         }
         
     }
     
-    for (int j = 0; j <n; j++)
+
+   //plus
+   long long add = 0 ;//忘记初始化了！！！
+    for (int i = 1; i <=max; i++)
     {
-        printf("%d ",a[j]);
+        if (a[i])
+        {
+            add = add +i;
+        }
+        
     }
-    printf("\n");
-    
-}
+    printf("%d",add -1);
     return 0;
 }
-
