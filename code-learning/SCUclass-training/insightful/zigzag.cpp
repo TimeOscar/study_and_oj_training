@@ -1,6 +1,6 @@
 #include <stdio.h>
 int a[105][105];
-int arrange(int m , int n ){
+void arrange(int m , int n ){
     int j = 0 , k = 0, i = 1 ;
     a[j][k] = i ;
     while (i <m*n )//这个等号会导致ai都看不出来的死循环
@@ -42,11 +42,7 @@ int arrange(int m , int n ){
             a[j][k] = i ;
         }//向左下走
     }
-    }
-    
-  
-    return 0 ;
-}
+    }}
 int main() {
     int m = 0 , n = 0 ;
     scanf("%d%d",&m,&n);
@@ -66,3 +62,6 @@ int main() {
 }
 //本题目我没有看到触碰边界的2个判定条件，
 //误以为一个条件都可以运行，这是我犯下的巨大错误，让我debug时间加倍//
+
+//方法2。dir作为方向判断的变量进行计算
+//方法3.观察得出：横纵坐标之和是奇数还是偶数。

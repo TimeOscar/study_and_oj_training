@@ -12,9 +12,9 @@ int main() {
     
     for (int i = 2; i*i < max; i++)
     {
-        for (int  j = 2*i; j < max; i += i )
+        for (int  j = 2*i; j < max; i += i )//j = i*i更·优化，前面已经筛过了
         {
-            is_prime[i] = 0;
+            is_prime[j] = 0;
         }
         
     }
@@ -33,3 +33,6 @@ int main() {
     printf("%lld",add);
     return 0;
 }
+//局部变量不能太大，栈溢出爆内存，
+//bool char可以让数组大小变小
+//

@@ -1,33 +1,33 @@
-#include <stdio.h>
-int main() {
-    int max ; 
-    scanf("%d",&max);
-    int a[10000005] ;
-    for (int i = 0; i <10000005; i++)
+#include<stdio.h>
+int make(int x , int y ){
+    int a=0,b=0,c=0;
+    for ( a = 0; a <=x; a++)
     {
-        a[i] = 1;
-    }
-    
-    for (int i = 2; i*i <= max; i++)
-    {
-        for ( int j = 2*i; j <= max; j =j+i )//这里调试了2次改debug之后才搞好了
+        for ( b = 0; b+a <= x; b++)
         {
-            a[j] = 0;
+            for ( c = 0; c+a+b  <= x; c++)
+            {
+
+            if(3*a+2*b+c==y && a+b+c ==x){
+                printf("%d %d %d\n",a ,b,c);
+            }
+            }
+            
         }
         
     }
     
 
-   //plus
-   long long add = 0 ;//忘记初始化了！！！
-    for (int i = 1; i <=max; i++)
-    {
-        if (a[i])
-        {
-            add = add +i;
-        }
-        
-    }
-    printf("%d",add -1);
     return 0;
 }
+int main(){
+    int n , x , y ;
+    scanf("%d",&n);
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d%d",&x , &y );
+        make(x, y );
+    }
+    return 0 ;
+}
+//debug太好用啦哈哈哈哈哈哈哈

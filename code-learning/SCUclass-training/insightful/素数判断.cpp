@@ -6,24 +6,26 @@ int main()
     scanf("%d", &n); // 有n组数据
 
     for (int i = 0; i < n; i++)
-    {int statue = 0;
+    {
+        int statue = 0;
         int x;
         scanf("%d", &x);
-        if (x <= 1 )
+        if (x <= 1)
         {
             statue = 1;
         }
-     //单独判断1
-        if(x>=4){
-        for (int j = 2; j * j <= x; j++)
+        // 单独排除小于等于 1 的数
+        if (x >= 4)
         {
-            if (x % j == 0)
+            for (int j = 2; j <= x / j; j++)
             {
-                statue = 1;
-                break;
+                if (x % j == 0)
+                {
+                    statue = 1;
+                    break;
+                }
             }
-        }}//试除法
-        // otput
+        } // 试除法
         if (statue == 1)
         {
             printf("no\n");
