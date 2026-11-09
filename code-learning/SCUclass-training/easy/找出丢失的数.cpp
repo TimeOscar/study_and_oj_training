@@ -1,7 +1,18 @@
 #include<stdio.h>
 #include<string.h>
 char a[1005]={0};
-int make(){
+void make();
+int main(){
+    int number;
+    scanf("%d",&number);
+    getchar();
+    for (int i = 0; i < number; i++)
+    {
+    make() ;
+    }
+    
+}
+void make(){
     memset(a, 0, sizeof(a));//第一次·使用
     //原本写的1005，数组超限！！！
     //误区，只有在定义的时候才能用{}来初始化
@@ -22,15 +33,4 @@ int make(){
         }
         
     }
-    return 0;
-}
-int main(){
-    int number;
-    scanf("%d",&number);
-    getchar();
-    for (int i = 0; i < number; i++)
-    {
-    make() ;
-    }
-    
 }

@@ -16,8 +16,6 @@ int make(){
     {
         printf("%c",a[i]);
     }
-    
-    
     return 0; 
 }
 int main(){

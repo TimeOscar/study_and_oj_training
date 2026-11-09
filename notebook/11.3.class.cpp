@@ -1,4 +1,4 @@
-#include <stdio.h> //题目，输入一段文字，把文字中的``替换为''
+ #include <stdio.h> //题目，输入一段文字，把文字中的``替换为''
 #include <cstdio>
 #include <stdio.h>
 #include <string.h>

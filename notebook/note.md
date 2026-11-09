@@ -84,11 +84,17 @@ freopen("out.txt","w",stdout)
         字符常量使用单引号'' \' 
         'd' ==100
         小写改大写printf("%c\n", c- 'a'+'A')
+        putchar()\
+        
+        getchar()\ 
 2. 字符串：以元素0（'\0'）结尾的字符数组
 PS:0(asc2码null 0 )  !=  '0'(asc2码32)
 字符串include<string.h>
 
-    %s遇到空白字符停下  strlen()   gets()/fgets():读入1行字符
+    %s遇到空白字符停下  strlen() 
+    
+    fgets(输入到，长度，来源):读入1行字符 然后把读入的最终值给
+
 strrve（）字符串反转
 '\0'  '\t'
 
@@ -99,7 +105,7 @@ strrve（）字符串反转
 
 常用字符串处理函数
 strcmp 比较
-strlen
+strlen()括号里面是数组名a/b（当数值为0（不是符号0）时候结束计数）
 strcpy
 strcat
 strchr查找
@@ -113,10 +119,15 @@ atoi/atof
 -o2 2级优化，编译器使用
 ## 字符串【以0结尾的字符数组】
 学习2种东西：状态机（状态转换）+模式匹配；\
+
+状态机
+
+模式匹配：在输入里面一直寻找你需要的特定字符，匹配到后再进行处理。
 处理字符串，不要一个一个读，整行读入之后处理数组\
 方法for（int i= 0 ； s[i]!= '\0';i++)\
 fgets性能>>getchar：EOF后返回值是-1\
-putchar
+putchar  getchar
+
 ## 重要思想
 解耦：分离处理逻辑和数据\
 常量数组：不用规定长度，可用于简化代码
