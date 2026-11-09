@@ -5,10 +5,8 @@
 			"name": "C++ 调试 (MinGW gdb)",
 			"type": "cppdbg",
 			"request": "launch",
-			// 调试对象：当前打开的 .cpp 对应的 exe
-			// 重要：MinGW 的 gdb 不支持中文文件名，排序begin.cpp 会报 No such file or directory
-			// 想调试就用英文名文件，例如 sort_begin.cpp
-			"program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+			// 使用固定英文名的调试产物，避免 GDB 解析中文 exe 路径失败
+			"program": "${workspaceFolder}/.vscode/active.exe",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",

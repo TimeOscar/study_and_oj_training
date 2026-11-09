@@ -9,7 +9,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "${workspaceFolder}/.vscode/active.exe",
                 "-fexec-charset=GBK"
             ],
             "options": {
@@ -22,7 +22,7 @@
                 "kind": "build",
                 "isDefault": false
             },
-            "detail": "用 C:/mingw64 的 g++ 编译当前打开的 .cpp，在同一个文件夹生成同名 .exe（Ctrl+Shift+B）"
+            "detail": "编译当前文件并生成固定英文名的调试程序 .vscode/active.exe"
         },
         {
             "label": "C++ Compile (C++17)",
@@ -33,7 +33,7 @@
                 "-std=c++17",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "${workspaceFolder}/.vscode/active.exe",
                 "-fexec-charset=GBK"
             ],
             "options": {
@@ -48,7 +48,7 @@
         {
             "label": "C++ Run exe (no debug)",
             "type": "process",
-            "command": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "command": "${workspaceFolder}/.vscode/active.exe",
             "options": {
                 "cwd": "${fileDirname}"
             },
@@ -64,7 +64,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${workspaceFolder}\\.vscode\\active.exe"
             ],
             "options": {
                 "cwd": "C:/mingw64/bin"
