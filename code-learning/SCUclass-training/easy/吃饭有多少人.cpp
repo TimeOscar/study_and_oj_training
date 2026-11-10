@@ -10,13 +10,14 @@ int make(int x , int y ){
 
             if(3*a+2*b+c==y && a+b+c ==x){
                 printf("%d %d %d\n",a ,b,c);
+                goto end;//跳出循环
             }
             }
             
         }
         
     }
-    
+    end:
 
     return 0;
 }
@@ -31,3 +32,6 @@ int main(){
     return 0 ;
 }
 //debug太好用啦哈哈哈哈哈哈哈
+
+//代码优化
+//1.go to
