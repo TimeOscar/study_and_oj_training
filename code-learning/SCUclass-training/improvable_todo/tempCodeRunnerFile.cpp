@@ -1,39 +1,59 @@
-#include <stdio.h>
 #include <string.h>
-char a[505], b[505];
-int mystrstr(char a[505], char b[505])
-{
-    int len_a = strlen(a);
-    int len_b = strlen(b);
-
-    int i = 0, temp = 0;
-    for (; i <= len_a ;)
+#include <stdio.h>
+char a[31];
+int make(char a[20])
+{    int cont = 0; int  m = 0 ;
+    for (int i = 0; i < 15; i++) // 最多读15个字符
     {
-        if (a[i] == b[temp]) // a从0开始比较
+       
+        if (a[i] >= '1' && a[i] <= '9')//读到数字1-9计数//漏掉字符‘’了
+        {   
+            m = m * 10 + a[i];
+        }
+        else if (a[i] == '.')
+        {   cont ++;//记录点数
+            if (m >= 0 && m <= 255)
+            {
+                m = 0;
+                continue;
+            }
+            else
+            {
+                return 1; // no
+            }
+        }else
         {
-            i++;temp++;//同时走下一位            
-        } else{
-            i++
-        ;
-        }// 匹配上首相开始比较
-    }
-    if (temp == len_b+1 )//我不知道为什么要加1
-    {
-        printf("YES");
-    }
-    else
-    {
-        printf("NO");
+            return 1;//no//非数字非。跳出
+        }
+        
+        //结束
+        if(a[i] = 0 &&cont ==3){//判断点数是否是3
+
+//漏洞：如果结尾是点号无法更改
+            return 0;//yes
+            
+        }
     }
     return 0;
 }
 int main()
 {
-    fgets(a, 505, stdin);
-    fgets(b, 505, stdin);
-    mystrstr(a, b);
+    while (1)
+    {
+        fgets(a, 31, stdin);
+        if ( 0 == strcmp(a, "End of file\0"))//strcmp返回值错误
+        {
+            break;
+        }
+        if (make(a) == 1)
+        {
+            printf("NO\n");
+        }
+        else
+        {
+            printf("YES\n");
+        }
+    }
+
     return 0;
 }
-
-// 我打算在strstr函数中进行修改
-//但是这会让我的脑子不清醒，所以debug还是太好用了
